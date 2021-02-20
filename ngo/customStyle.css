@@ -1,0 +1,94 @@
+input[type='checkbox'] {
+    display: none;
+}
+.card-container {
+    margin-top: 80px;
+    -webkit-perspective: 5000px;
+    display: grid;
+    perspective: 5000px;
+}
+
+.card-container h5{
+    font-size: 50px;
+}
+
+.card-flip, .card-container {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: all 0.7s ease-in-out;
+    transform-style: preserve-3d;
+    transition: all 0.7s ease-in-out;
+}
+
+.card-flip div {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.card-flip {
+    -webkit-grid-template: 1fr / 1fr;
+    -webkit-grid-template-areas: "frontAndBack";
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: all 0.7s ease-in-out;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    grid-template-areas: "frontAndBack";
+    transform-style: preserve-3d;
+    transition: all 0.7s ease-in-out;
+}
+
+.front {
+    -webkit-grid-area: frontAndBack;
+    grid-area: frontAndBack;
+}
+
+.back {
+    -webkit-grid-area: frontAndBack;
+    -webkit-transform: rotateY(-180deg);
+    grid-area: frontAndBack;
+    transform: rotateY(180deg);
+}
+
+input[type='checkbox']:checked + .card-container .card-flip {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.viewh-75 {
+    height: 72vh;
+    width: 72%;
+}
+
+th:after {
+    content: "*";
+    color: #F00;
+}
+
+.back h5{
+    font-size: 35px;
+}
+
+.btn:hover{
+    background-color: transparent;
+    color: black;
+}
+
+.container{
+    margin-top: 90px;
+}
+
+.container h6{
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+/* @media only screen and (max-width: 768px){
+    .back h5{
+        font-size: 15px;
+    }
+} */
